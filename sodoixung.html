@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<h3>Nhap do dai cua day so can kiem tra:</h3>
+	<input type="number" name="" id="num">
+	<input type="button" name="" onclick="KiemTra()" value="KetQua">
+	<div>
+		<h3>Ket Qua:  <span id="ketqua"></span></h3>
+		
+	</div>
+	
+	<script type="text/javascript">
+		function KiemTra() {
+			var text=[];
+		var n=document.getElementById("num").value;
+		if(n<=0){
+			 document.getElementById("ketqua").innerHTML= "Moi nhap lai so >0";
+		}
+		for(var i=1;i<=n;i++){
+			var dv=0;
+			var sodao=0;
+			var sogoc=i;
+			
+			while(sogoc > 0){
+					dv=Math.floor(sogoc % 10);
+					sodao=sodao*10 + dv;
+					sogoc=Math.floor(sogoc/10);
+			}
+			if(sodao == i){ text.push(i);}
+				document.getElementById("ketqua").innerHTML= text;
+			
+		}
+		
+		
+		}
+		
+		
+		
+
+	</script>
+</body>
+</html>

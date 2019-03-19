@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Timsonguyento</title>
+</head>
+<body>
+	<p>Moi nhap do dai cua day so</p>
+	<input type="number" name="number" id="number">
+	<input onclick="SoNguyenTo()" type="button"
+	value="KetQua">
+	<div id="ketQua"></div>
+	<script type="text/javascript">
+		
+		function SoNguyenTo(){
+			var n= document.getElementById('number').value;
+			var text=[];
+			if(n>=2){text.push(2);}
+			for(var i=3;i<n;i+=2){
+				var flag=true;
+				for(var j=2;j<=parseInt(Math.sqrt(i));j++){
+					if(i % j ==0){
+						flag=false;
+					}
+				}
+			if(flag==true){text.push(i);}
+			}
+
+			document.getElementById("ketQua").innerHTML= text;
+
+
+			
+		}
+		
+	</script>
+</body>
+</html>
